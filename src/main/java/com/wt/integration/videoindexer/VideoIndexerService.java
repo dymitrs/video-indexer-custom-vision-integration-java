@@ -7,6 +7,8 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -17,6 +19,8 @@ import java.util.stream.Collectors;
 import static com.wt.integration.ConfigVariables.VI_SUBSCRIPTION_KEY;
 
 public final class VideoIndexerService {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(VideoIndexerService.class);
 
     private static final String BASE_URI = "https://api.videoindexer.ai";
     private static final String LOCATION = "westeurope";
@@ -62,6 +66,8 @@ public final class VideoIndexerService {
     }
 
     public static byte[] getThumbnail(String accessToken, String accountId, String videoId, String thumbnailId) throws IOException {
+        LOGGER.info("Getting thumbnailId {}...", thumbnailId);
+
         byte[] image;
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             final HttpGet httpGet = new HttpGet(BASE_URI + String.format(THUMBNAIL_SERVICE_PATH, LOCATION, accountId, videoId, thumbnailId));

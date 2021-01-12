@@ -53,7 +53,7 @@ public final class CustomVisionService {
         for (Prediction prediction : customVisionResponse.getPredictions()) {
             double probability = prediction.getProbability();
             if (probability >= ENSO_THRESHOLD && "logo-enso".equals(prediction.getTagName())) {
-                LOGGER.info("Detected ENSO LOGO in thumbnail with id {}. Probability: {}.", thumbnailId, probability);
+                LOGGER.info("Detected ENSO logo in thumbnail with id {}. Probability: {}.", thumbnailId, probability);
             }
         }
     }
