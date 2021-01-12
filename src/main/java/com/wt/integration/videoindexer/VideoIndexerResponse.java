@@ -10,7 +10,7 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VideoIndexerResponse {
 
-    public List<Video> videos = new ArrayList<>();
+    private List<Video> videos = new ArrayList<>();
 
 }
 
@@ -18,7 +18,7 @@ public class VideoIndexerResponse {
 @JsonInclude(JsonInclude.Include.NON_NULL)
 class Video {
 
-    public Insights insights;
+    private Insights insights;
 
 }
 
@@ -26,7 +26,7 @@ class Video {
 @JsonInclude(JsonInclude.Include.NON_NULL)
 class Insights {
 
-    public List<Shot> shots = new ArrayList<>();
+    private List<Shot> shots = new ArrayList<>();
 
 }
 
@@ -34,7 +34,7 @@ class Insights {
 @JsonInclude(JsonInclude.Include.NON_NULL)
 class Shot {
 
-    public List<Keyframe> keyFrames = new ArrayList<>();
+    private List<Keyframe> keyFrames = new ArrayList<>();
 
 }
 
@@ -42,7 +42,7 @@ class Shot {
 @JsonInclude(JsonInclude.Include.NON_NULL)
 class Keyframe {
 
-    public List<Instance> instances = new ArrayList<>();
+    private List<Instance> instances = new ArrayList<>();
 
 }
 
@@ -50,7 +50,7 @@ class Keyframe {
 @JsonInclude(JsonInclude.Include.NON_NULL)
 class Instance {
 
-    public String thumbnailId;
+    private String thumbnailId;
 
 }
 

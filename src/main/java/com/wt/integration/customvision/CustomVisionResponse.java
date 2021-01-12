@@ -10,7 +10,7 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CustomVisionResponse {
 
-    public List<Prediction> predictions = new ArrayList<>();
+    private List<Prediction> predictions = new ArrayList<>();
 
 }
 
@@ -18,7 +18,7 @@ public class CustomVisionResponse {
 @JsonInclude(JsonInclude.Include.NON_NULL)
 class Prediction {
 
-    public double probability;
-    public String tagName;
+    private double probability;
+    private String tagName;
 
 }
