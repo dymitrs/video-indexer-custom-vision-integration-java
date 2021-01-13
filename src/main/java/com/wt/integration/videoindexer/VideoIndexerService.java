@@ -49,7 +49,7 @@ public final class VideoIndexerService {
     }
 
     public static VideoIndexerResponse getIndexedVideo(String accessToken, String accountId, String videoId) throws IOException {
-        VideoIndexerResponse videoIndexerResponse = null;
+        VideoIndexerResponse videoIndexerResponse;
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
